@@ -15,6 +15,7 @@ Instruction(8Bit) + Return-Register(8Bit) + Atribute 1(8Bit) + Atribute 2(8Bit)
 
 <h2>Instruction Set</h2>
 A short description of whats the binary/hex equivalent to a given assembly instruction.
+<br>ALU/arithmetic instructions have code between 000 0001 and 0000 1111.
 
         OP-Code         |    Assembly-Code      |       Atributes       |       Description
         ---------------------------------------------------------------------------------------------------------
@@ -30,6 +31,13 @@ A short description of whats the binary/hex equivalent to a given assembly instr
 	0000 1001	|			|			|
 	0000 1010	|			|			|
 	0000 1011	|			|			|
-
+	0000 1100	|			|			|
+	0000 1101	|			|			|
+	0000 1110	|			|			|
+	0000 1111	|			|			|
+	0001 0000	|	JMP		|			|
+	0001 0001	|	BEQ		|			|
+	0001 0010	|	BNEQ		|			|
+	0001 0011	|			|			|
 
 <h2>Register Design</h2>
