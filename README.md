@@ -10,7 +10,7 @@ Instruction(8Bit) + Return-Register(8Bit) + Atribute 1(8Bit) + Atribute 2(8Bit)
 
 <h2>Dependencies</h2>
 <ul>
-<li>Logisim version 2.16.4</li>
+<li>Logisim version 2.16.1.4</li>
 </ul>
 
 <h2>Instruction Set</h2>
@@ -19,10 +19,10 @@ A short description of whats the binary/hex equivalent to a given assembly instr
 
         OP-Code         |    Assembly-Code      |       Atributes       |       Description
         ---------------------------------------------------------------------------------------------------------
-        0000 0000       |       NOP             |                       |       Execute no operation
-        0000 0001       |       ADD             | <Ret-Reg><Reg1><Reg2> |       Add two values of given register
-        0000 0010       |       ADDI            | <Ret-Reg><Reg1><VALUE>|       Add imidiate values onto register
-        0000 0011       |       SUB             | <Ret-Reg><Reg1><Reg2> |       Subtract two register
+        0000 0000       |       NOP             |                       | Execute no operation
+        0000 0001       |       ADD             | <Ret-Reg><Reg1><Reg2> | Add two values of given register
+        0000 0010       |       ADDI            | <Ret-Reg><Reg1><VALUE>| Add imidiate values onto register
+        0000 0011       |       SUB             | <Ret-Reg><Reg1><Reg2> | Subtract two register
         0000 0100       |       SUBI            |                       |
         0000 0101       |	MULT		|			|
 	0000 0110	|	MULTI		|			|
@@ -35,9 +35,21 @@ A short description of whats the binary/hex equivalent to a given assembly instr
 	0000 1101	|			|			|
 	0000 1110	|			|			|
 	0000 1111	|			|			|
-	0001 0000	|	JMP		|			|
-	0001 0001	|	BEQ		|			|
-	0001 0010	|	BNEQ		|			|
+	0001 0000	|	JMP		| <Pos-Arg1><Pos-Arg2>	| jump to an address with 16Bit!
+	0001 0001	|	BEQ		| <Reg-Arg1><Reg-Arg2>	| Check if two register are equals
+	0001 0010	|	BNEQ		| <Reg-Arg1><Reg-Arg2>	| Check if two register aren't equals
 	0001 0011	|			|			|
 
 <h2>Register Design</h2>
+
+	Register	|	Alias		|	Description
+	---------------------------------------------------------------------------------------------------------
+		x0	|	zero		| Hard wired zero register
+		x1	|	ra		| Return address
+		x2	|	sp		| Stackpointer
+		x3	|	gp		| global pointer
+		x4	|	tp		| Thread pointer
+		x5-7	|	t0-2		| Temporary register
+		x8-9	|	s0-1		| Saved register
+		x10-11	|	a0-1		| Function arguments
+		x12-15	|	s0-2		| Saved register	
