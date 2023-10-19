@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/timo/Schreibtisch/Programming/Logisim-RISC-CPU/asmCompiler/src/FileReader.cpp
+FileReader.h
+/home/timo/Schreibtisch/Programming/Logisim-RISC-CPU/asmCompiler/src/FileReader.h
+
+/home/timo/Schreibtisch/Programming/Logisim-RISC-CPU/asmCompiler/src/FileReader.h
+string
+-
+iostream
+-
+fstream
+-
+
+/home/timo/Schreibtisch/Programming/Logisim-RISC-CPU/asmCompiler/src/compiler.cpp
+iostream
+-
+FileReader.cpp
+/home/timo/Schreibtisch/Programming/Logisim-RISC-CPU/asmCompiler/src/FileReader.cpp
+

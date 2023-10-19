@@ -1,0 +1,3 @@
+/home/timo/Schreibtisch/Programming/Logisim-RISC-CPU/asmCompiler/build/CMakeFiles/rebuild_cache.dir
+/home/timo/Schreibtisch/Programming/Logisim-RISC-CPU/asmCompiler/build/CMakeFiles/edit_cache.dir
+/home/timo/Schreibtisch/Programming/Logisim-RISC-CPU/asmCompiler/build/CMakeFiles/compiler.dir

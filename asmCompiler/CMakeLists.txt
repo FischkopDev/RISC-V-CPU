@@ -5,4 +5,4 @@ cmake_minimum_required(VERSION 3.0)
 project(ASM_Compiler VERSION 1.0)
 
 # Add an executable target
-add_executable(compiler compiler.cpp)
+add_executable(compiler src/compiler.cpp)
