@@ -53,3 +53,12 @@ A short description of whats the binary/hex equivalent to a given assembly instr
 		x8-9	|	s0-1		| Saved register
 		x10-11	|	a0-1		| Function arguments
 		x12-15	|	s0-2		| Saved register	
+
+<h2>Example Code</h2>
+To run specific code you need to fill up the RAM with HEX values. One example to write 5 into register 1 would look like this.<br>
+Instruction = 02 (ADDI), Return-Register = 01 (REG), First-Argument = 00 (ZERO), Second-Argument = 05 (HEX-VALUE of 5)<br>
+The complete instruction will be:<br><br>
+
+	02010005 00000000 ...
+
+To run this in logisim you need to write HEX code like this into a file and load it up in logisim as RAM values.
