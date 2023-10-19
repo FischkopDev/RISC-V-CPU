@@ -17,28 +17,28 @@ Instruction(8Bit) + Return-Register(8Bit) + Atribute 1(8Bit) + Atribute 2(8Bit)
 A short description of whats the binary/hex equivalent to a given assembly instruction.
 <br>ALU/arithmetic instructions have code between 000 0001 and 0000 1111.
 
-        OP-Code         |    Assembly-Code      |       Atributes       |       Description
+        OP-Code(BIN/Hex)|    Assembly-Code      |       Atributes       |       Description
         ---------------------------------------------------------------------------------------------------------
-        0000 0000       |       NOP             |                       | Execute no operation
-        0000 0001       |       ADD             | <Ret-Reg><Reg1><Reg2> | Add two values of given register
-        0000 0010       |       ADDI            | <Ret-Reg><Reg1><VALUE>| Add imidiate values onto register
-        0000 0011       |       SUB             | <Ret-Reg><Reg1><Reg2> | Subtract two register
-        0000 0100       |       SUBI            |                       |
-        0000 0101       |	MULT		|			|
-	0000 0110	|	MULTI		|			|
-	0000 0111	|	DIV		|			|
-	0000 1000	|	DIVI		|			|
-	0000 1001	|			|			|
-	0000 1010	|			|			|
-	0000 1011	|			|			|
-	0000 1100	|			|			|
-	0000 1101	|			|			|
-	0000 1110	|			|			|
-	0000 1111	|			|			|
-	0001 0000	|	JMP		| <Pos-Arg1><Pos-Arg2>	| jump to an address with 16Bit!
-	0001 0001	|	BEQ		| <Reg-Arg1><Reg-Arg2>	| Check if two register are equals
-	0001 0010	|	BNEQ		| <Reg-Arg1><Reg-Arg2>	| Check if two register aren't equals
-	0001 0011	|			|			|
+        0000 0000 (00)  |       NOP             |                       | Execute no operation
+        0000 0001 (01)  |       ADD             | <Ret-Reg><Reg1><Reg2> | Add two values of given register
+        0000 0010 (02)  |       ADDI            | <Ret-Reg><Reg1><VALUE>| Add imidiate values onto register
+        0000 0011 (03)  |       SUB             | <Ret-Reg><Reg1><Reg2> | Subtract two register
+        0000 0100 (04)  |       SUBI            |                       |
+        0000 0101 (05)  |	MULT		|			|
+	0000 0110 (06)  |	MULTI		|			|
+	0000 0111 (07)  |	DIV		|			|
+	0000 1000 (08)  |	DIVI		|			|
+	0000 1001 (09)	|			|			|
+	0000 1010 (0A)	|			|			|
+	0000 1011 (0B)	|			|			|
+	0000 1100 (0C)	|			|			|
+	0000 1101 (0D)	|			|			|
+	0000 1110 (0E)	|			|			|
+	0000 1111 (0F)	|			|			|
+	0001 0000 (10)	|	JMP		| <Pos-Arg1><Pos-Arg2>	| jump to an address with 16Bit!
+	0001 0001 (11)	|	BEQ		| <Reg-Arg1><Reg-Arg2>	| Check if two register are equals
+	0001 0010 (12)	|	BNEQ		| <Reg-Arg1><Reg-Arg2>	| Check if two register aren't equals
+	0001 0011 (13)	|			|			|
 
 <h2>Register Design</h2>
 
