@@ -21,22 +21,4 @@ class Parser {
         std::string hashRoutine(std::string input);
 };
 
-//Representation of code 
-enum Code {
-    NOP = 0,
-
-    ADD = 1,
-    ADDI = 2,
-    SUB = 3,
-    SUBI = 4,
-    MULT = 5,
-    MULTI = 6,
-
-    JMP = 16,
-    BEQ = 17,
-    BNEQ = 18
-
-
-};
-
 #endif

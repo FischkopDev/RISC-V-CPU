@@ -34,7 +34,7 @@ std::string replace(std::string original, std::string toReplace, std::string rep
 
 std::string Parser::parseFile(std::string content){
     for(std::pair element : instructions){
-        
+        content = replace(content, element->first(), element->second());
     }
 }
 

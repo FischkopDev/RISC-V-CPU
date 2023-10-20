@@ -11,6 +11,7 @@ Instruction(8Bit) + Return-Register(8Bit) + Atribute 1(8Bit) + Atribute 2(8Bit)
 <h2>Dependencies</h2>
 <ul>
 <li>Logisim version 2.16.1.4</li>
+<li>CMake 3.0</li>
 </ul>
 
 <h2>Instruction Set</h2>
@@ -38,7 +39,9 @@ A short description of whats the binary/hex equivalent to a given assembly instr
 	0001 0000 (10)	|		JMP				| <Pos-Arg1><Pos-Arg2>	| jump to an address with 16Bit!
 	0001 0001 (11)	|		BEQ				| <Reg-Arg1><Reg-Arg2>	| Check if two register are equals
 	0001 0010 (12)	|		BNEQ			| <Reg-Arg1><Reg-Arg2>	| Check if two register aren't equals
-	0001 0011 (13)	|						|						|
+	0001 0011 (13)	|		PRNT			| <Reg-Arg1>			| Print something on display
+	0001 0100 (14)  |	 	RST				|		   --			| Reset display
+	0001 0101 (15)  | 		
 
 <h2>Register Design</h2>
 
@@ -53,6 +56,9 @@ A short description of whats the binary/hex equivalent to a given assembly instr
 		x8-9	|	s0-1		| Saved register
 		x10-11	|	a0-1		| Function arguments
 		x12-15	|	s0-2		| Saved register	
+
+<h2>Pipeline</h2>
+The given pipeline has a depth of 2. 
 
 <h2>Example Code</h2>
 To run specific code you need to fill up the RAM with HEX values. One example to write 5 into register 1 would look like this.<br>
