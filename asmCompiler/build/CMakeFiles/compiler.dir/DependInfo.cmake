@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/timo/Schreibtisch/Programming/Logisim-RISC-CPU/asmCompiler/src/compiler.cpp" "/home/timo/Schreibtisch/Programming/Logisim-RISC-CPU/asmCompiler/build/CMakeFiles/compiler.dir/src/compiler.cpp.o"
+  "/mnt/c/Users/User/Desktop/Programmieren/CPU-Logisim/RISC-V-CPU/asmCompiler/src/compiler.cpp" "/mnt/c/Users/User/Desktop/Programmieren/CPU-Logisim/RISC-V-CPU/asmCompiler/build/CMakeFiles/compiler.dir/src/compiler.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

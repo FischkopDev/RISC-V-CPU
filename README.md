@@ -41,7 +41,7 @@ A short description of whats the binary/hex equivalent to a given assembly instr
 	0001 0010 (12)	|		BNEQ			| <Reg-Arg1><Reg-Arg2>	| Check if two register aren't equals
 	0001 0011 (13)	|		PRNT			| <Reg-Arg1>			| Print something on display
 	0001 0100 (14)  |	 	RST				|		   --			| Reset display
-	0001 0101 (15)  | 		
+	0001 0101 (15)  | 		READ			| <Reg-Arg1>			| Read key input into the given register
 
 <h2>Register Design</h2>
 

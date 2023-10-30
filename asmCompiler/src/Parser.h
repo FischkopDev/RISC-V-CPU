@@ -5,18 +5,24 @@
 #include <iostream>
 #include <map>
 #include <list>
+#include <fstream>
 
 class Parser {
     private:
-        int instructions = 0; //This is the amount of maximum instruction used in our program
-        int instructionPointer = 0; //This will point to the current address in RAM
-        std::list<std::pair<std::string, std::string>> instructions;
+        int instructionAmount; //This is the amount of maximum instruction used in our program
+        int instructionPointer; //This will point to the current address in RAM
 
-        std::string replace(std::string original, std::string toReplace, std::string replacement);
+        std::string binFileName;
+
+        std::list<std::pair<std::string, std::string>> instructions;
+        std::list<std::pair<std::string, std::string>> registers;
+
+        std::string replace(std::string content, const std::string key, const std::string value);
+
         std::tuple<std::string, std::string, std::string> parseInstruction(std::string line);
     public:
         Parser(std::string contentToParse);
-        std::string parseFile(std::string content);
+        std::string parseFile(std::string content, std::string fileName);
         bool writeBinFile(std::string content);
         std::string hashRoutine(std::string input);
 };

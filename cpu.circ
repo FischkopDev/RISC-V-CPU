@@ -186,27 +186,33 @@
     <wire from="(190,750)" to="(1530,750)"/>
     <wire from="(190,230)" to="(190,750)"/>
     <wire from="(190,230)" to="(240,230)"/>
-    <wire from="(350,590)" to="(410,590)"/>
-    <wire from="(350,120)" to="(350,590)"/>
     <wire from="(350,120)" to="(1100,120)"/>
     <wire from="(250,120)" to="(350,120)"/>
     <wire from="(1490,630)" to="(1490,690)"/>
-    <wire from="(370,580)" to="(370,690)"/>
     <wire from="(370,690)" to="(1490,690)"/>
-    <wire from="(370,580)" to="(410,580)"/>
     <wire from="(420,680)" to="(1480,680)"/>
-    <wire from="(420,600)" to="(420,680)"/>
     <wire from="(1480,630)" to="(1480,680)"/>
     <wire from="(1470,630)" to="(1470,670)"/>
     <wire from="(180,670)" to="(430,670)"/>
     <wire from="(180,230)" to="(180,670)"/>
     <wire from="(80,230)" to="(180,230)"/>
-    <wire from="(430,600)" to="(430,610)"/>
     <wire from="(450,660)" to="(450,670)"/>
     <wire from="(450,670)" to="(1470,670)"/>
     <wire from="(430,660)" to="(430,670)"/>
     <wire from="(430,610)" to="(440,610)"/>
     <wire from="(440,610)" to="(440,630)"/>
+    <wire from="(350,420)" to="(410,420)"/>
+    <wire from="(350,120)" to="(350,420)"/>
+    <wire from="(370,410)" to="(410,410)"/>
+    <wire from="(430,430)" to="(430,610)"/>
+    <wire from="(420,430)" to="(420,680)"/>
+    <wire from="(370,410)" to="(370,690)"/>
+    <wire from="(350,420)" to="(350,480)"/>
+    <wire from="(350,480)" to="(500,480)"/>
+    <comp lib="7" loc="(525,459)" name="Text">
+      <a name="text" val="Keyboard"/>
+      <a name="font" val="Dialog plain 12"/>
+    </comp>
     <comp lib="0" loc="(80,120)" name="Clock"/>
     <comp lib="0" loc="(1060,240)" name="Splitter">
       <a name="facing" val="north"/>
@@ -216,7 +222,6 @@
     <comp lib="7" loc="(231,40)" name="Text">
       <a name="text" val="16-BIT CPU"/>
     </comp>
-    <comp lib="6" loc="(410,590)" name="TTY"/>
     <comp lib="7" loc="(1122,572)" name="Text">
       <a name="text" val="Instruction"/>
       <a name="font" val="Dialog plain 12"/>
@@ -242,7 +247,9 @@
       <a name="font" val="Dialog plain 12"/>
     </comp>
     <comp lib="5" loc="(1140,470)" name="Register"/>
+    <comp lib="6" loc="(410,420)" name="TTY"/>
     <comp lib="5" loc="(1140,400)" name="Register"/>
+    <comp lib="6" loc="(500,480)" name="Keyboard"/>
     <comp lib="0" loc="(900,280)" name="Splitter">
       <a name="facing" val="north"/>
       <a name="fanout" val="8"/>

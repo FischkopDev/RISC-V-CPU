@@ -1,0 +1,6 @@
+; This is an example prog01m to run an infinity loop
+; adding 1 to register one.
+
+NOP
+01I 01,01,#1	;This actually adds an emidiate value to register one
+10 #0001	    ;This will jump to address 1 given as hex value

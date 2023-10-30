@@ -6,11 +6,11 @@
 
 #IncludeRegexTransform: 
 
-/home/timo/Schreibtisch/Programming/Logisim-RISC-CPU/asmCompiler/src/FileReader.cpp
+/mnt/c/Users/User/Desktop/Programmieren/CPU-Logisim/RISC-V-CPU/asmCompiler/src/FileReader.cpp
 FileReader.h
-/home/timo/Schreibtisch/Programming/Logisim-RISC-CPU/asmCompiler/src/FileReader.h
+/mnt/c/Users/User/Desktop/Programmieren/CPU-Logisim/RISC-V-CPU/asmCompiler/src/FileReader.h
 
-/home/timo/Schreibtisch/Programming/Logisim-RISC-CPU/asmCompiler/src/FileReader.h
+/mnt/c/Users/User/Desktop/Programmieren/CPU-Logisim/RISC-V-CPU/asmCompiler/src/FileReader.h
 string
 -
 iostream
@@ -18,9 +18,33 @@ iostream
 fstream
 -
 
-/home/timo/Schreibtisch/Programming/Logisim-RISC-CPU/asmCompiler/src/compiler.cpp
+/mnt/c/Users/User/Desktop/Programmieren/CPU-Logisim/RISC-V-CPU/asmCompiler/src/Parser.cpp
+Parser.h
+/mnt/c/Users/User/Desktop/Programmieren/CPU-Logisim/RISC-V-CPU/asmCompiler/src/Parser.h
+iostream
+-
+fstream
+-
+
+/mnt/c/Users/User/Desktop/Programmieren/CPU-Logisim/RISC-V-CPU/asmCompiler/src/Parser.h
+tuple
+-
+string
+-
+iostream
+-
+map
+-
+list
+-
+fstream
+-
+
+/mnt/c/Users/User/Desktop/Programmieren/CPU-Logisim/RISC-V-CPU/asmCompiler/src/compiler.cpp
 iostream
 -
 FileReader.cpp
-/home/timo/Schreibtisch/Programming/Logisim-RISC-CPU/asmCompiler/src/FileReader.cpp
+/mnt/c/Users/User/Desktop/Programmieren/CPU-Logisim/RISC-V-CPU/asmCompiler/src/FileReader.cpp
+Parser.cpp
+/mnt/c/Users/User/Desktop/Programmieren/CPU-Logisim/RISC-V-CPU/asmCompiler/src/Parser.cpp
 
