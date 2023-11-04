@@ -1,18 +1,16 @@
 ; This file will just contain some functions
 ; to show, what is possible with my assembly language
 
-use system.asm       ; This will allow to use routines from another asm file
+use system.asm       ; This will allow to use routines from another asm 005621:                  ; This will be the starting routine
+    01I x5, 00, #6   ; Write the value F2 into register x5
+    01I x6, 00, #1   ; Write "           "
+    10 loop            ; Jump to routine loop
 
-00000000:               ; This will be the starting routine
-    02 06, 00, 06       ; Write the value F2 into register x5
-    02 07, 00, 01       ; Write "           "
-    10 00000004         ; Jump to routine loop
+loop:
+    11 x5, x6          ; Check if x5 = x6
+    10 exit            ; if so exit the loop
+    01I x6, x6, #1     ; otherwise go through loop again
+    10 loop
 
-00000004:
-    11 06, 07           ; Check if x5 = x6
-    10 00000009         ; if so exit the loop
-    02 07, 07, 01       ; otherwise go through loop again
-    11 00000004
-
-00000009:
-    00                  ; kinda stop operation...
+exit:
+    NOP                 ; kinda stop ope01tion...

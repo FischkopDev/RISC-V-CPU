@@ -3,11 +3,10 @@
 #include "Parser.cpp"
 
 int main(){
-    FileReader fr("../../asmPrograms/loopSum.asm");
-    std::cout << fr.getFileContent() << std::endl;
+    FileReader fr("../../asmPrograms/showcase.asm");
 
     std::string content = fr.getFileContent();
     Parser p(content);
-    p.parseFile(content, "loopSum");
+    p.parseFile(content, "showcase");
     return 0;   
 }

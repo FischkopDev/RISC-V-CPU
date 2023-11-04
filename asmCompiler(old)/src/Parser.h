@@ -6,6 +6,7 @@
 #include <map>
 #include <list>
 #include <fstream>
+#include <sstream>
 
 class Parser {
     private:
@@ -18,6 +19,8 @@ class Parser {
         std::list<std::pair<std::string, std::string>> registers;
 
         std::string replace(std::string content, const std::string key, const std::string value);
+        std::string replaceInstruction(std::string content, const std::string key, const std::string value);
+        std::string replaceRoutine(std::string content);
 
         std::tuple<std::string, std::string, std::string> parseInstruction(std::string line);
     public:

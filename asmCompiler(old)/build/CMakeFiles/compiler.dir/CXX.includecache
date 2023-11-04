@@ -39,6 +39,8 @@ list
 -
 fstream
 -
+sstream
+-
 
 /mnt/c/Users/User/Desktop/Programmieren/CPU-Logisim/RISC-V-CPU/asmCompiler/src/compiler.cpp
 iostream

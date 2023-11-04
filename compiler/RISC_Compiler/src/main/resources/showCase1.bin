@@ -1,0 +1,12 @@
+system.asm
+_start:
+02050006
+02060001
+10_loop
+_loop:
+11050600
+10_exit
+02060601
+10_loop
+_exit:
+0

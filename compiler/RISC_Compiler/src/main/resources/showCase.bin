@@ -1,0 +1,21 @@
+; Example of the output for my parser
+
+;Use always implies that this file is located in storage before this file
+;So the address 0 will always be added by the addresses from the system. file
+use system.asm       ; This will allow to use routines from another asm file
+
+0x000000:                        ; This will be the starting routine
+    ;All instruction will look like
+    ; <Address><OP-Code><Register>...
+    0x000001 02 05, 00, #6       ; Write the value F2 into register x5
+    0x000002 02 06, 00, #1       ; Write "           "
+    0x000003 12 0x000004         ; Jump to routine loop
+
+0x000004:
+    0x000005 11 05, 06          ; Check if x5 = x6
+    0x000006 12 0x000009        ; if so exit the loop
+    0x000007 02 06, 06, #1      ; otherwise go through loop again
+    0x000008 12 0x000009
+
+0x000009:
+    00                 ; kinda stop operation...

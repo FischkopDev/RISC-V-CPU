@@ -34,10 +34,6 @@ Parser::Parser(std::string contentToParse) {
 
 }
 
-//std::tuple<std::string, std::string, std::string> Parser::parseInstruction(std::string line) {
-    // Implement the logic to parse instructions.
-    // You should return a tuple with the parsed information.
-
 /*
     Replace the actual content. This will replace a string with another string. 
     It goes for each entry in the given string.
@@ -52,6 +48,45 @@ std::string Parser::replace(std::string content, const std::string key, const st
     return content;
 }
 
+std::string Parser::replaceInstruction(std::string content, const std::string key, const std::string value){
+    instructionPointer++;
+    return replace(content, key, value);
+}
+
+std::string Parser::replaceRoutine(std::string content){
+    size_t colonPos = content.find(':');
+    
+    // If a colon is found, look for the last space character before it
+    if (colonPos != std::string::npos) {
+        size_t spacePos = content.rfind(' ', colonPos);
+
+        // If a space character is found, replace the word
+        if (spacePos != std::string::npos) {
+            //Creating temp variables
+            std::string beforeColon = content.substr(0, spacePos);
+            std::string hexString;
+            std::stringstream hex;
+
+            //writing the hex value into our file
+            hex << std::hex << instructionPointer;
+            hexString = hex.str();
+
+            // Remove "0x" if it's present
+            if (hexString.substr(0, 2) == "0x") {
+                hexString = hexString.substr(2);
+            }
+
+            beforeColon += " 00" +  hexString;
+
+            // Return the modified string
+            return beforeColon + content.substr(colonPos);
+        }
+    }
+
+    // If no replacement is made, return the original content
+    return content;
+}
+
 /*
     Parse a file and replace its content with specific constrains.
     The parsed part will be written down into another file for 
@@ -61,12 +96,17 @@ std::string Parser::parseFile(std::string content, std::string fileName) {
     //For each element in our instruction replace the instruction inside the file with its
     //Hex code.
     for (const std::pair<std::string, std::string>& element : instructions) {
-        content = replace(content, element.first, element.second);
+        content = replaceInstruction(content, element.first, element.second);
     }
 
     //replace each mentioned register with its hex code
     for (const std::pair<std::string, std::string>& element : registers) {
         content = replace(content, element.first, element.second);
+    }
+
+        //replace each routine with its address
+    for (const std::pair<std::string, std::string>& element : registers) {
+        content = replaceRoutine(content);
     }
 
     //write the parsed content back to a file with <filename>.bin 
@@ -75,7 +115,7 @@ std::string Parser::parseFile(std::string content, std::string fileName) {
         outputFile << content;
         outputFile.close();
     } else {
-        std::cerr << "Unable to open the file '" << fileName << "' for writing." << std::endl;
+        std::cerr << "Unable to open file '" << fileName << "' for writing." << std::endl;
     }
 
     //return the content to continue translating/executing the file.
