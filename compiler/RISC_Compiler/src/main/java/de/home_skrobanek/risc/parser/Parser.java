@@ -3,16 +3,19 @@ package de.home_skrobanek.risc.parser;
 import de.home_skrobanek.risc.file.FileHandler;
 
 import java.io.File;
+import java.util.regex.Pattern;
 
 public class Parser {
 
     FileHandler handler;
+    private String fileName;
 
     public Parser(FileHandler handler) {
         this.handler = handler;
+        fileName = handler.getFile().getName().split(Pattern.quote("."))[0] + ".bin";
     }
 
-    public void parse(){
+    public String parse(){
         String content = handler.read();
 
         //remove comments
@@ -42,7 +45,9 @@ public class Parser {
         content = handler.replace(",", "", content);
         content = handler.replace("use", "", content);
 
-        handler.write(content, false, new File("showCase1.bin"));
+        handler.write(content, false, new File(fileName));
+
+        return content;
     }
 
     private String replaceRoutines(String content){

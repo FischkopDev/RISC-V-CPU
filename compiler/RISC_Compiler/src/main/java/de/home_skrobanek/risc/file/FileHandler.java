@@ -113,4 +113,8 @@ public class FileHandler {
     public boolean existsFile(){
         return file.exists();
     }
+
+    public File getFile(){
+        return file;
+    }
 }

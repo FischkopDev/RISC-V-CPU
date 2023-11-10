@@ -4,15 +4,19 @@
 use system.asm       ; This will allow to use routines from another asm file
 
 _start:                  ; This will be the starting routine
-    ADDI x5, zero, #06   ; Write the value F2 into register x5
-    ADDI x6, zero, #01   ; Write "           "
-    JMP _loop            ; Jump to routine loop
+    ADDI x1, zero, #06   ; Write the value F2 into register x5
+    ADDI x2, zero, #01   ; Write "           "
+    NOP                 ;test
+    NOP                 ;test
 
 _loop:
-    BEQ x5, x6, 00       ; Check if x5 = x6
+    BEQ 00, x1, x2       ; Check if x5 = x6
+    NOP                 ;test
     JMP _exit            ; if so exit the loop
-    ADDI x6, x6, #01     ; otherwise go through loop again
-    JMP _loop
+    ADDI x2, x2, #01     ; otherwise go through loop again
+    JMP _loop               ; same
+    NOP                   ; does weird stuff
+    NOP                 ;dumb
 
 _exit:
     NOP                 ; kinda stop operation...
