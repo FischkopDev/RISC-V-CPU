@@ -5,6 +5,7 @@ import de.home_skrobanek.risc.parser.Parser;
 
 import java.io.File;
 import java.util.HashMap;
+import java.util.Scanner;
 
 /*
     This class compiles the bin formatted file into the runnable
@@ -89,11 +90,26 @@ public class Compiler {
     public static void main(String[]args){
         System.out.println("Compiler for RISC-V Assembly started");
 
-       // Parser p = new Parser(new File("showCase.asm"));
-        FileHandler fileHandler = new FileHandler(new File("showCase.asm"));
+        Scanner sc = new Scanner(System.in);
+        String line = "";
 
-        Parser parser = new Parser(fileHandler);
-        Compiler com = new Compiler(parser.parse());
-        com.compileToRAW();
+        System.out.print("\nFile name: ");
+        while((line = sc.nextLine()) != null) {
+            System.out.print("\nFile name: ");
+
+            if(line.contains(".asm")) {
+                FileHandler fileHandler = new FileHandler(new File(line));
+
+                Parser parser = new Parser(fileHandler);
+                Compiler com = new Compiler(parser.parse());
+                com.compileToRAW();
+            }
+            else if(line.equalsIgnoreCase("exit")){
+                System.out.println("Compiler stopping");
+                break;
+            }
+            else
+                System.err.println("Error: Please select a .asm file");
+        }
     }
 }

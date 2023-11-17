@@ -12,6 +12,7 @@ Instruction(8Bit) + Return-Register(8Bit) + Atribute 1(8Bit) + Atribute 2(8Bit)
 <ul>
 <li>Logisim version 2.16.1.4</li>
 <li>CMake 3.0</li>
+<li>JDK >= 1.8</li>
 </ul>
 
 <h2>Instruction Set</h2>
@@ -20,28 +21,30 @@ A short description of whats the binary/hex equivalent to a given assembly instr
 
     OP-Code(BIN/Hex)|    Assembly-Code      |       Atributes       |       Description
     ---------------------------------------------------------------------------------------------------------
-    0000 0000 (00)  |       NOP             |                       | Execute no operation
+    0000 0000 (00)  |       NOP             | <No attributes>       | Execute no operation
     0000 0001 (01)  |       ADD             | <Ret-Reg><Reg1><Reg2> | Add two values of given register
     0000 0010 (02)  |       ADDI            | <Ret-Reg><Reg1><VALUE>| Add imidiate values onto register
     0000 0011 (03)  |       SUB             | <Ret-Reg><Reg1><Reg2> | Subtract two register
-    0000 0100 (04)  |       SUBI            |                       |
-    0000 0101 (05)  |		MULT			|						|
-	0000 0110 (06)  |		MULTI			|						|
-	0000 0111 (07)  |		DIV				|						|
-	0000 1000 (08)  |		DIVI			|						|
-	0000 1001 (09)	|						|						|
-	0000 1010 (0A)	|						|						|
-	0000 1011 (0B)	|						|						|
-	0000 1100 (0C)	|						|						|
-	0000 1101 (0D)	|						|						|
-	0000 1110 (0E)	|						|						|
-	0000 1111 (0F)	|						|						|
+    0000 0100 (04)  |       SUBI            | <Ret-Reg><Reg1><VALUE>| Subtract a value from a register
+    0000 0101 (05)  |		MULT			| <Ret-Reg><Reg1><Reg2>	| Multiply two register
+	0000 0110 (06)  |		MULTI			| <Ret-Reg><Reg1><VALUE>| Multiply a register onto a value
+	0000 0111 (07)  |		DIV				| <Ret-Reg><Reg1><Reg2> |
+	0000 1000 (08)  |		DIVI			| <Ret-Reg><Reg1><VALUE>|
+	0000 1001 (09)	|			-			|						|
+	0000 1010 (0A)	|			-			|						|
+	0000 1011 (0B)	|			-			|						|
+	0000 1100 (0C)	|			-			|						|
+	0000 1101 (0D)	|			-			|						|
+	0000 1110 (0E)	|			-			|						|
+	0000 1111 (0F)	|			-			|						|
 	0001 0000 (10)	|		JMP				| <Pos-Arg1><Pos-Arg2>	| jump to an address with 16Bit!
-	0001 0001 (11)	|		BEQ				| <Reg-Arg1><Reg-Arg2>	| Check if two register are equals
+	0001 0001 (11)	|		BEQ*			| <Reg-Arg1><Reg-Arg2>	| Check if two register are equals
 	0001 0010 (12)	|		BNEQ			| <Reg-Arg1><Reg-Arg2>	| Check if two register aren't equals
 	0001 0011 (13)	|		PRNT			| <Reg-Arg1>			| Print something on display
-	0001 0100 (14)  |	 	RST				|		   --			| Reset display
-	0001 0101 (15)  | 		READ			| <Reg-Arg1>			| Read key input into the given register
+	0001 0100 (14)  |	 	RST*			|		   --			| Reset display
+	0001 0101 (15)  | 		READ*			| <Reg-Arg1>			| Read key input into the given register
+
+*This operation is not implemented on hardware yet.
 
 <h2>Register Design</h2>
 
@@ -56,6 +59,10 @@ A short description of whats the binary/hex equivalent to a given assembly instr
 		x8-9	|	s0-1		| Saved register
 		x10-11	|	a0-1		| Function arguments
 		x12-15	|	s0-2		| Saved register	
+
+<h2>Stack Pointer</h2>
+Using my CPU as template, the stack pointer will be pre set at #FFFFF, because of the size for my register we'll be able 
+to modify 
 
 <h2>Pipeline</h2>
 The given pipeline has a depth of 2. 

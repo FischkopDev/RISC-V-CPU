@@ -17,7 +17,7 @@ public enum Instruction {
     JMP("10"),
     BEQ("11"),
     BNEQ("12"),
-    PRINT("13"),
+    PRNT("13"),
     RST("14"),
     READ("15");
 

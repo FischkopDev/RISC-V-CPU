@@ -11,35 +11,35 @@ _boot:                          ; Boot the system and console
     ADD ra, zero, s0            ; Write back s0 to ra
     ADDI t0, zero, ("M")        ; Write ASCI of M to t0
     ADDI t1, zero, ("i")        ; Write
-    ADDI t2, zero, ("n")
+    ADDI t2, zero, ("n")        ;
 
-    PRNT t0
-    PRNT t1
-    PRNT t2
+    PRNT t0                     ;
+    PRNT t1                     ;
+    PRNT t2                     ;
 
     ADDI t0, zero, ("i")        ; Write ASCI of M to t0
-    ADDI t1, zero, ("m")
-    ADDI t2, zero, ("a")
+    ADDI t1, zero, ("m")        ;
+    ADDI t2, zero, ("a")        ;
 
-    PRNT t0
-    PRNT t1
-    PRNT t2
+    PRNT t0                     ;
+    PRNT t1                     ;
+    PRNT t2                     ;
 
     ADDI t0, zero, ("l")        ; Write ASCI of M to t0
-    ADDI t1, zero, (" ")
-    ADDI t2, zero, ("O")
+    ADDI t1, zero, (" ")        ;
+    ADDI t2, zero, ("O")        ;
 
-    PRNT t0
-    PRNT t1
-    PRNT t2
+    PRNT t0                     ;
+    PRNT t1                     ;
+    PRNT t2                     ;
 
     ADDI t0, zero, ("S")        ; Write ASCI of M to t0
-    ADDI t1, zero, (" ")
-    ADDI t2, zero, ("1")
+    ADDI t1, zero, (" ")        ;
+    ADDI t2, zero, ("1")        ;
 
-    PRNT t0
-    PRNT t1
-    PRNT t2
+    PRNT t0                     ;
+    PRNT t1                     ;
+    PRNT t2                     ;
 
     JMP ra                      ; return to entry point
 
